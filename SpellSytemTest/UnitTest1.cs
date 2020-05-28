@@ -48,5 +48,34 @@ namespace SpellSytemTest
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+
+        [TestMethod]
+        public void TensTestwithSingleDigitRoundedValue()
+        {
+            Digits dgt = new Digits();
+
+
+            string expectedResult = "Ten";
+            int input = 10;
+
+            string actualResult = dgt.Tens(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void TensTestwithSingleDigitOddValue()
+        {
+            Digits dgt = new Digits();
+
+
+            string expectedResult = "Ninety Nine";
+            int input = 99;
+
+            string actualResult = dgt.Tens(input);
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }

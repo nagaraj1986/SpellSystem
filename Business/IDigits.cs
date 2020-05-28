@@ -7,6 +7,8 @@ namespace Business
     interface IDigits
     {
         string Ones(int number);
-       
+        string Tens(int number);
+
+
     }
 }

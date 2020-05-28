@@ -8,7 +8,7 @@ namespace Business
     {
         string Ones(int number);
         string Tens(int number);
-
+      
 
     }
 }

@@ -13,17 +13,16 @@ namespace ConsoleApp1
             string word = "";
             try
             {
-                bool beginsZero = false;//tests for 0XX    
-                bool isDone = false;//test if already translated    
+                
+                bool isDone = false;
                 double dblAmt = (Convert.ToDouble(Number));
 
                 if (dblAmt > 0)
-                {
-                    beginsZero = Number.StartsWith("0");
+                {                 
 
                     int numDigits = Number.Length;
                     int pos = 0;
-                    String place = "";
+                    string place = "";
                     switch (numDigits)
                     {
                         case 1:  
@@ -75,7 +74,39 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            
+            string isNegative = "";
+            try
+            {
+             
+                Console.WriteLine("Enter a Number to convert to currency");
+                string number = Console.ReadLine();
+                number = Convert.ToDouble(number).ToString();
+
+                if (number.Contains("-"))
+                {
+                    isNegative = "Minus ";
+                    number = number.Substring(1, number.Length - 1);
+                }
+                if (number == "0")
+                {
+                    Console.WriteLine("The number in currency fomat is \nZero Only");
+                }
+                else
+                {
+                    Console.WriteLine("The number in currency fomat is \n{0}", isNegative + ConvertDigits(number));
+                }
+                
+
+                Console.ReadKey();
+             
+               
+
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
